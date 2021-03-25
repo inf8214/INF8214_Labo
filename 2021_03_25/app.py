@@ -1,5 +1,5 @@
 import json
-from flask import Flask, render_template, request, send_file, jsonify
+from flask import Flask, render_template, request, jsonify, send_from_directory
 from pathlib import Path
 # from werkzeug.utils import secure_filename
 
@@ -18,13 +18,11 @@ def index():
     # Retourner le template formulaire.html
     return '...'
 
-# 2. Route pour ajouter une image
+# 2. Route pour chemin d'accès complet vers ressource/fichier
 ####################################
-@app.route('/ajoutImage', methods=['POST'])
-def ajoutImage():
-    # Enregistrer l'image dans './static/img/'
-    # Ajouter nouvelle image au fichier Json
-    # Retourner ensuite la page par défaut
+@app.route('/img/<path:path>')
+def fichier(path):
+    # Retourne le fichier static
     return '...'
 
 # 3. Route pour l'affichage de la liste des images
@@ -36,13 +34,14 @@ def listeImages():
     # retouner le template 'listeImages.html' avec passation des variables 'images' et 'droits'
     return '...'
 
-# 4. Route pour chemin d'accès complet vers ressource/fichier
+# 4. Route pour ajouter une image
 ####################################
-@app.route('/<path:path>')
-def fichier(path):
-    # Retourne le fichier static
+@app.route('/ajoutImage', methods=['POST'])
+def ajoutImage():
+    # Enregistrer l'image dans './static/img/'
+    # Ajouter nouvelle image au fichier Json
+    # Retourner ensuite la page par défaut
     return '...'
-
 
 
 ########################################################################
