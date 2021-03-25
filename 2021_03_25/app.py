@@ -16,7 +16,7 @@ app = Flask(__name__)
 @app.route('/', methods=['GET'])
 def index():
     # Retourner le template formulaire.html
-    pass
+    return '...'
 
 # 2. Route pour ajouter une image
 ####################################
@@ -25,7 +25,7 @@ def ajoutImage():
     # Enregistrer l'image dans './static/img/'
     # Ajouter nouvelle image au fichier Json
     # Retourner ensuite la page par défaut
-    pass
+    return '...'
 
 # 3. Route pour l'affichage de la liste des images
 ####################################
@@ -34,14 +34,14 @@ def listeImages():
     # Lire d'abord le fichier json et stocker le contenu sous forme de dictionnaire dans la variable 'images'
     # Stocker la valeur de l'argument 'droits' de la requête dans la variable 'droits', après conversion en booléen
     # retouner le template 'listeImages.html' avec passation des variables 'images' et 'droits'
-    pass
+    return '...'
 
 # 4. Route pour chemin d'accès complet vers ressource/fichier
 ####################################
 @app.route('/<path:path>')
 def fichier(path):
     # Retourne le fichier static
-    pass
+    return '...'
 
 
 
