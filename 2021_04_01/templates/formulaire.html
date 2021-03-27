@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+
+{% block title %}
+    Formulaires
+{% endblock %}
+
+{% block content %}
+
+    <!-- Titre de la page -->
+    <h4 class="text-center my-4">Banque d'images</h4>
+
+    <!-- Formulaire pour l'ajout d'une nouvelle image -->
+    <div class="card p-3 m-3"><div class="card-body">
+        <form name="formulaire2" action="/ajoutImage" method="POST" enctype = "multipart/form-data">
+            <h5 class="card-title pb-3">Ajouter une nouvelle image</h5>
+            <!-- Fichier -->
+            <div class="mb-3">
+                <input class="form-control" type="file" name="fichier">
+            </div>
+            <!-- Titre de l'image -->
+            <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon1">Titre</span>
+                <input type="text" class="form-control" placeholder="Choisissez un titre" name="titre">
+            </div>
+            <!-- Droits d'auteurs -->
+            <div>
+                <!-- <p>Droits d'auteurs :</p> -->
+                <div class="form-check">
+                    <input class="form-check-input" id="radio1" type="radio" name="droits" value="False" checked>
+                    <label class="form-check-label" for="radio1">Libre de droit</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" id="radio2" type="radio" name="droits" value="True">
+                    <label class="form-check-label" for="radio2">Tous droits réservés</label>
+                </div>
+            </div>
+            <!-- Bouton pour soumettre du formulaire -->
+            <button class="btn btn-outline-dark mt-3" type="submit">Ajouter</button>
+        </form>
+    </div></div>
+
+    <!-- Formulaire pour obtenir la liste des images -->
+    <div class="card p-3 m-3"><div class="card-body">
+        <form name="formulaire1" action="/listeImages" method="GET">
+            <h5 class="card-title pb-3">Consulter la liste des images</h5>
+            <!-- Droits d'auteurs -->
+            <div class="form-check">
+                <input class="form-check-input" id="radio1" type="radio" name="droits" value="False" checked>
+                <label class="form-check-label" for="radio1">Images libres de droit</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" id="radio2" type="radio" name="droits" value="True">
+                <label class="form-check-label" for="radio2">Images avec droits d'auteur</label>
+            </div>
+            <!-- Bouton pour soumettre le formulaire -->
+            <button class="btn btn-outline-dark mt-3" type="submit">Voir la liste</button>
+        </form>
+    </div></div>
+
+
+{% endblock %}
